@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/friend',
     component: JCFriend
-  },
+  }
 ];
 
 export default routes;
