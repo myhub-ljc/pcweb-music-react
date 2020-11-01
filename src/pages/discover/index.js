@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 
 import { dicoverMenu } from '@/common/local-data.js';
 import {
@@ -7,9 +7,18 @@ import {
 } from './style.js';
 import { NavLink } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
+import request from '@/services/request.js';
 
 export default memo(function JCDiscover(props) {
   const { route } = props;
+
+  useEffect(() => {
+    request({
+      url: "/banner"
+    }).then(res => {
+      console.log(res);
+    })
+  })
 
   return (
     <DiscoverWrapper>
