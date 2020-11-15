@@ -1,12 +1,10 @@
 //第三方
 import React, { memo } from 'react';
 
-import { HeaderLists } from '@/common/local-data.js';
-
-//组件
 import { NavLink } from 'react-router-dom';
-// import { SearchOutlined } from '@ant-design/icons';
 import { Input } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+import { HeaderLists } from '@/common/local-data.js';
 
 import {
   HeaderWrapper,
@@ -16,6 +14,7 @@ import {
 
 export default memo(function JCAppHeader() {
 
+  //业务代码
   const ShowSelectItem = ((item, index) => {
     if(index < 3) {
       return (
@@ -29,6 +28,7 @@ export default memo(function JCAppHeader() {
     }
   })
 
+  //返回的jsx
   return (
     <HeaderWrapper>
       <div className="content wrap-v1">
@@ -47,7 +47,7 @@ export default memo(function JCAppHeader() {
           </div>
         </HeaderLeft>
         <HeaderRight>
-          <Input className="search" placeholder="音乐/视频/电台/用户"/>
+          <Input className="search" placeholder="音乐/视频/电台/用户" prefix={<SearchOutlined/>}/>
           <div className="center">创作者中心</div>
           <div>登陆</div>
         </HeaderRight>

@@ -17,9 +17,9 @@ export default memo(function App() {
   return (
     <Provider store={store}>
       <HashRouter>
-      <JCAppHeader/>
-      {renderRoutes(routes)}
-      <JCAppFooter/>
+        <JCAppHeader/>
+        {renderRoutes(routes)}
+        <JCAppFooter/>
       </HashRouter>
     </Provider>
   )
