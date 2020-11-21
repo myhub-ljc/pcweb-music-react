@@ -7,7 +7,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import { HeaderLists } from '@/common/local-data.js';
 
 import {
-  HeaderWrapper,
+  AppHeaderWrapper,
   HeaderLeft,
   HeaderRight
 } from './styled';
@@ -15,7 +15,7 @@ import {
 export default memo(function JCAppHeader() {
 
   //业务代码
-  const ShowSelectItem = ((item, index) => {
+  const ShowSelectItem = (item, index) => {
     if(index < 3) {
       return (
         <NavLink to={item.link} exact={true}>
@@ -26,11 +26,11 @@ export default memo(function JCAppHeader() {
     } else {
       return <a href={item.link}>{item.title}</a>
     }
-  })
+  }
 
   //返回的jsx
   return (
-    <HeaderWrapper>
+    <AppHeaderWrapper>
       <div className="content wrap-v1">
         <HeaderLeft>
           <a href="#/" className="logo sprite_01">网易云音乐</a>
@@ -53,6 +53,6 @@ export default memo(function JCAppHeader() {
         </HeaderRight>
       </div>
       <div className="divider"></div>
-    </HeaderWrapper>
+    </AppHeaderWrapper>
   )
 })
