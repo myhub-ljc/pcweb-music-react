@@ -28,7 +28,7 @@ export default memo(function JCHotRecommend() {
             <div className="recommend-list">
                 {
                    hotRecommends.map((item, index) => {
-                        return <JCSongsCover key={item} info={item} />
+                        return <JCSongsCover key={item.id} info={item} />
                    })
                 }
             </div>  

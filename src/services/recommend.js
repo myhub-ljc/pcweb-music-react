@@ -16,3 +16,13 @@ export function getHotRecommends(limit) {
     }
   })
 }
+
+//封装我们新碟上架的网络请求函数
+export function getNewAlbums(limit) {
+  return request({
+    url: "/top/album",
+    params: {
+      limit
+    }
+  })
+}

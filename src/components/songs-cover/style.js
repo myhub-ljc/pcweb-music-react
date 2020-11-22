@@ -13,8 +13,6 @@ export const SongsCover = styled.div`
         }
 
         .info {
-            width: 140px;
-            height: 25px;
             line-height: 25px;
             display: flex;
             justify-content: space-between;
@@ -24,9 +22,9 @@ export const SongsCover = styled.div`
             bottom: 0;
             left: 0;
             right: 0;
-            color: #ccc;
+            color: #fff;
             background: black;
-            opacity: 0.7;
+            opacity: 0.5;
             .erji {
                 display: inline-block;
                 width: 14px;
@@ -46,6 +44,12 @@ export const SongsCover = styled.div`
     }
 
     .middle-cover {
+        font-size: 14px;
+        color: #000;
         margin-top: 10px;
+    }
+
+    .bottom-cover {
+        color: #666;
     }
 `
