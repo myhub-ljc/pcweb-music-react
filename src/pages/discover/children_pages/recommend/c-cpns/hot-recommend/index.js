@@ -7,7 +7,7 @@ import {
 } from './style';
 import { getHotRecommendAction } from '../../store/actionCreators';
 import { HOT_RECOMMEND_LIMIT } from '@/common/constants';
-import useSelection from 'antd/lib/table/hooks/useSelection';
+import JCSongsCover from '@/components/songs-cover/index';
 
 export default memo(function JCHotRecommend() {
 
@@ -17,6 +17,7 @@ export default memo(function JCHotRecommend() {
     }), shallowEqual);
     const dispatch = useDispatch();
 
+    //other hooks
     useEffect(() => {
         dispatch(getHotRecommendAction(HOT_RECOMMEND_LIMIT));
     }, [dispatch]);
@@ -24,10 +25,10 @@ export default memo(function JCHotRecommend() {
     return (
         <HotRecommendWrapper>
             <JCRecommendTitle title="热门推荐" keywords={["华语", "流行", "摇滚", "民谣", "电子"]}/>
-            <div>
+            <div className="recommend-list">
                 {
                    hotRecommends.map((item, index) => {
-                        return <div>{item.name}</div>
+                        return <JCSongsCover key={item} info={item} />
                    })
                 }
             </div>  
