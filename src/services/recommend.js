@@ -26,3 +26,13 @@ export function getNewAlbums(limit) {
     }
   })
 }
+
+//封装我们的榜单的网络请求函数
+export function getTopList(idx) {
+  return request({
+    url: "/top/list",
+    params: {
+      idx
+    }
+  })
+}

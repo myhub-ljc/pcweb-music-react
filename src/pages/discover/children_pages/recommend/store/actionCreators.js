@@ -1,10 +1,10 @@
 import * as actionTypes from './constants';
 
-import { getNewAlbums } from '@/services/recommend';
-
 import { 
   getTopBanners,
-  getHotRecommends
+  getHotRecommends,
+  getNewAlbums,
+  getTopList
  } from '@/services/recommend';
 
 const changeTopBannerAction = (res) => ({
@@ -20,6 +20,21 @@ const changeHotRecommendAction = (res) => ({
 const changeNewAlbumAction = (res) => ({
   type: actionTypes.CHANGE_NEW_ALBUM,
   newAlbums: res.albums
+})
+
+const changeUpRankingAction = (res) => ({
+  type: actionTypes.CHANGE_UP_RANKING,
+  upRanking: res.playlist
+})
+
+const changeNewRankingAction = (res) => ({
+  type: actionTypes.CHANGE_NEW_RANKING,
+  newRanking: res.playlist
+})
+
+const changeOrignRankingAction = (res) => ({
+  type: actionTypes.CHANGE_ORIGN_RANKING,
+  orignRanking: res.playlist
 })
  
 //从index.js中将请求回来的数据派发到createAction中，然后再保存到reducer中去
@@ -44,5 +59,26 @@ export const getNewAlbumsAction = (limit) => {
     getNewAlbums(10).then(res => {
       dispatch(changeNewAlbumAction(res));
     })
+  }
+}
+
+export const getTopListAction = (idx) => {
+  return dispatch => {
+    getTopList(idx).then(res => {
+        switch(idx) {
+          case 0:
+            dispatch(changeNewRankingAction(res));
+            break;
+          case 2: 
+            dispatch(changeOrignRankingAction(res));
+            break;
+          case 3: 
+            dispatch(changeUpRankingAction(res));  
+            break;
+          default:
+            console.log("其他数据处理");
+        }
+      }
+    )
   }
 }

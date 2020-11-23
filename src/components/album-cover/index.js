@@ -10,8 +10,8 @@ export default memo(function JCAlbumCover(props) {
     return (
         <AlbumWrapper size={size} width={width} bgp={bgp}>
             <div className="album-image">
-                <img src={getSizeImage(info.picUrl, size)}/>
-                <a href="/todo" className="cover sprite_covor"></a>
+                <img src={getSizeImage(info.picUrl, size)} alt=""/>
+                <a href="/todo" className="cover sprite_covor">{info.name}</a>
             </div>
             <div className="album-info">
                 <div className="name">{info.name}</div>
