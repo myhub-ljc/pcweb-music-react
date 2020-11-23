@@ -12,6 +12,7 @@ import store from './store';
 //组件类
 import JCAppHeader from '@/components/app-header';
 import JCAppFooter from '@/components/app-footer';
+import JCAppPlayBar from '@/pages/player/app-play-bar/index';
 
 export default memo(function App() {
   return (
@@ -20,6 +21,7 @@ export default memo(function App() {
         <JCAppHeader/>
         {renderRoutes(routes)}
         <JCAppFooter/>
+        <JCAppPlayBar/>
       </HashRouter>
     </Provider>
   )
