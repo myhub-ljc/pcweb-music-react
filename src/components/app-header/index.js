@@ -18,7 +18,7 @@ export default memo(function JCAppHeader() {
   const ShowSelectItem = (item, index) => {
     if(index < 3) {
       return (
-        <NavLink to={item.link} exact={true}>
+        <NavLink to={item.link}>
           {item.title}
           <i className="sprite_01 icon"></i>
         </NavLink>
