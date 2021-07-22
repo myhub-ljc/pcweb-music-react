@@ -12,6 +12,7 @@ import request from '@/services/request.js';
 export default memo(function JCDiscover(props) {
   const { route } = props;
 
+  //在这里使用useEffect这个hook发起网络请求
   useEffect(() => {
     request({
       url: "/banner"

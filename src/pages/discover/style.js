@@ -9,9 +9,9 @@ export const DiscoverWrapper = styled.div`
 
 export const TopMenu = styled.div`
   display: flex;
-  padding-left: 170px;
+  padding-left: 180px;
   position: relative;
-  top: -4px;
+  top: -5px;
 
   .item{
     a{
