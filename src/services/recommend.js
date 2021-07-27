@@ -1,6 +1,7 @@
-//我会在这里专门发起recommend网络请求
+//在这里单独封装好recommend组件所需要的网络请求函数
 import request from './request';
 
+//用于请求轮播图的函数
 export function getTopBanners() {
   return request({
     url: '/banner'

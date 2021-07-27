@@ -18,9 +18,9 @@ export default memo(function JCTopBanners() {
     //2,redux
     //组件和redux关联目的是获取数据和进行dispatch操作(而这里必须要传入第二个参数shallowEqual是为了要求做一个浅层比较)
     const { topBanners } = useSelector(state => ({
-    //因为使用了immutable.js，因此当然要使用get啦(最外层的reducer也是使用了哦);
+    //因为使用了immutable.js，因此当然要使用get
     // topBanners: state.get("recommend").get("topBanners")
-    //当然了如果嫌弃上面这样写麻烦的话也可以使用下面这种写法也是可以滴
+    //当然了如果嫌弃上面这样写麻烦的话也可以使用下面这种写法也是可以的
     topBanners: state.getIn(["recommend", "topBanners"])
     }), shallowEqual)
     const dispatch = useDispatch();
@@ -28,7 +28,7 @@ export default memo(function JCTopBanners() {
     //3,其他hooks
     const bannerRef = useRef();
     
-    useEffect(() => {
+    useEffect(() => { 
         dispatch(getTopBannerAction());
     }, [dispatch]);
 
